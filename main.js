@@ -65,6 +65,28 @@ var updateFromDOM = function(){
 	document.getElementById("startDiv").innerHTML       = "&nbsp" +( mainOptions.start       = parseInt(document.getElementById("start").value      ));
 	document.getElementById("endDiv").innerHTML         = "&nbsp" +( mainOptions.end         = parseInt(document.getElementById("end").value        ));
 	document.getElementById("sampleRangeDiv").innerHTML = "&nbsp" +( mainOptions.sampleRange = parseInt(document.getElementById("sampleRange").value));
+	if(parseInt(document.getElementById("useFunction").value) == 1){
+		document.getElementById("useFunctionDiv").innerHTML = "&nbsp" + "True";
+		mainOptions.pointFunction = getFunctionMap;
+	}
+	else{
+		document.getElementById("useFunctionDiv").innerHTML = "&nbsp" + "False";
+		mainOptions.pointFunction = getAccuracyMap;
+	}
+
+
+	if(parseInt(document.getElementById("functionType").value) == 0){
+		document.getElementById("functionTypeDiv").innerHTML = "&nbsp" + "Monte Carlo Sampling";
+		mainOptions.sample = randomSampleIntegral;
+	}
+	else if(parseInt(document.getElementById("functionType").value) == 1){
+		document.getElementById("functionTypeDiv").innerHTML = "&nbsp" + "Regular Interval Sampling";
+		mainOptions.sample = regularSampleIntegral;	
+	}
+	else{
+		document.getElementById("functionTypeDiv").innerHTML = "&nbsp" + "Importance Sampling";
+		mainOptions.sample = importanceSampleIntegral;
+	}
 }
 
 var drawOptions = {

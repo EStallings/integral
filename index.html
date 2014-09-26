@@ -22,6 +22,9 @@
 	.slider{
 
 	}
+	.in{
+		display:inline-block;
+	}
 
 
 </style>
@@ -36,23 +39,33 @@
 	<div style="width:960; margin-left:10px">
 		<div class="rangeBoxBox">
 			<h3 class="boxHeader">X axis options</h3> <hr />
-			<div class="rangeBox"><div style="float:left; text-align:left; display:inline-block">xOffset: </div><div style="display:inline-block"><input class="slider" type="range" value="50"  defaultValue="50"  min="0"  max="100"  step="1"  id="xOffset"></div><div id="xOffsetDiv" style="display:inline-block"></div></div>
-			<div class="rangeBox"><div style="float:left; text-align:left; display:inline-block">xScale:  </div><div style="display:inline-block"><input class="slider" type="range" value="1"   defaultValue="1"   min="1"  max="100"  step="1"  id="xScale"></div><div id="xScaleDiv" style="display:inline-block"></div></div>
-			<div class="rangeBox"><div style="float:left; text-align:left; display:inline-block">xTicks:  </div><div style="display:inline-block"><input class="slider" type="range" value="20"  defaultValue="20"  min="1"  max="100"  step="1" id="xTicks"></div><div id="xTicksDiv" style="display:inline-block"></div></div>
+			<div class="rangeBox"><div style="float:left; text-align:left; display:inline-block">xOffset: </div><div class="in"><input class="slider" type="range" value="50"  defaultValue="50"  min="-1000"  max="1000"  step="1"  id="xOffset"></div><div id="xOffsetDiv" class="in"></div></div>
+			<div class="rangeBox"><div style="float:left; text-align:left; display:inline-block">xScale:  </div><div class="in"><input class="slider" type="range" value="1"   defaultValue="1"   min="1"  max="100"  step="1"  id="xScale"></div><div id="xScaleDiv" class="in"></div></div>
+			<div class="rangeBox"><div style="float:left; text-align:left; display:inline-block">xTicks:  </div><div class="in"><input class="slider" type="range" value="20"  defaultValue="20"  min="1"  max="100"  step="1" id="xTicks"></div><div id="xTicksDiv" class="in"></div></div>
 		</div>
 		<div class="rangeBoxBox">
 			<h3 class="boxHeader">Y axis options</h3> <hr />
-			<div class="rangeBox"><div style="float:left; text-align:left; display:inline-block">yOffset: </div><div style="display:inline-block"><input class="slider" type="range" value="0"   defaultValue="0"   min="0"  max="100"  step="1"  id="yOffset"></div><div id="yOffsetDiv" style="display:inline-block"></div></div>
-			<div class="rangeBox"><div style="float:left; text-align:left; display:inline-block">yScale:  </div><div style="display:inline-block"><input class="slider" type="range" value="20"  defaultValue="20"  min="1"  max="100"  step="1"  id="yScale"></div><div id="yScaleDiv" style="display:inline-block"></div></div>
-			<div class="rangeBox"><div style="float:left; text-align:left; display:inline-block">yTicks:  </div><div style="display:inline-block"><input class="slider" type="range" value="2"   defaultValue="2"   min="1"  max="100"  step="1" id="yTicks"></div><div id="yTicksDiv" style="display:inline-block"></div></div>
+			<div class="rangeBox"><div style="float:left; text-align:left; display:inline-block">yOffset: </div><div class="in"><input class="slider" type="range" value="0"   defaultValue="0"   min="0"  max="100"  step="1"  id="yOffset"></div><div id="yOffsetDiv" class="in"></div></div>
+			<div class="rangeBox"><div style="float:left; text-align:left; display:inline-block">yScale:  </div><div class="in"><input class="slider" type="range" value="20"  defaultValue="20"  min="1"  max="100"  step="1"  id="yScale"></div><div id="yScaleDiv" class="in"></div></div>
+			<div class="rangeBox"><div style="float:left; text-align:left; display:inline-block">yTicks:  </div><div class="in"><input class="slider" type="range" value="2"   defaultValue="2"   min="1"  max="100"  step="1" id="yTicks"></div><div id="yTicksDiv" class="in"></div></div>
 		</div>
 		<div class="rangeBoxBox">
 			<h3 class="boxHeader">Function Options</h3> <hr />
-			<div class="rangeBox"><div style="float:left; text-align:left; display:inline-block">start:   </div><div style="display:inline-block"><input class="slider" type="range" value="0"   defaultValue="0"   min="0"  max="1000" step="1"  id="start"></div><div id="startDiv" style="display:inline-block"></div></div>
-			<div class="rangeBox"><div style="float:left; text-align:left; display:inline-block">end :    </div><div style="display:inline-block"><input class="slider" type="range" value="5"   defaultValue="5"   min="1"  max="2000" step="1"  id="end"></div><div id="endDiv" style="display:inline-block"></div></div>
-			<div class="rangeBox"><div style="float:left; text-align:left; display:inline-block">range:   </div><div style="display:inline-block"><input class="slider" type="range" value="700" defaultValue="700" min="50" max="1000" step="10" id="sampleRange"></div><div id="sampleRangeDiv" style="display:inline-block"></div></div>
+			<div class="rangeBox"><div style="float:left; text-align:left; display:inline-block">start:   </div><div class="in"><input class="slider" type="range" value="0"   defaultValue="0"   min="0"  max="1000" step="1"  id="start"></div><div id="startDiv" class="in"></div></div>
+			<div class="rangeBox"><div style="float:left; text-align:left; display:inline-block">end :    </div><div class="in"><input class="slider" type="range" value="5"   defaultValue="5"   min="1"  max="2000" step="1"  id="end"></div><div id="endDiv" class="in"></div></div>
+			<div class="rangeBox"><div style="float:left; text-align:left; display:inline-block">range:   </div><div class="in"><input class="slider" type="range" value="700" defaultValue="700" min="50" max="1000" step="10" id="sampleRange"></div><div id="sampleRangeDiv" class="in"></div></div>
 		</div>
+		<br/><br/>
 		<div>
+			Plot function instead of integral distribution?
+			<input style="width:30" type="range" value="0" defaultValue="0" min="0" max="1" step="1" id="useFunction"> <div class="in" id="useFunctionDiv"></div> <br/>
+
+			Integral Sampling Method:
+			<input style="width:60" type="range" value="0" defaultValue="0" min="0" max="2" step="1" id="functionType"> <div class="in" id="functionTypeDiv"></div>
+		</div>
+		<br/><br/>
+		<div>
+			Memory leak warning: do not use importance sampling and plot the integral distribution; either use function plot mode or another sampling heuristic. This issue is being investigated.
 			<input type="button" value="Run" onclick="getPoints()">
 		</div>
 	</div>
