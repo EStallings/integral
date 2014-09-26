@@ -1,5 +1,6 @@
 
 function update(){
+	updateFromDOM();
 	draw();
 	setTimeout(update, 0);
 }
@@ -13,8 +14,34 @@ points = null;
 window.onload = function(){
 	canvas = document.getElementById('myCanvas');
 	context = canvas.getContext('2d');
-	points = getAccuracyMap(f3, randomSampleIntegral, 0, 5, 700);
+	DOMElements = {
+		xOffset:document.getElementById('xOffset'),
+		xScale:document.getElementById('xScale'),
+		xTicks:document.getElementById('xTicks'),
+		yOffset:document.getElementById('yOffset'),
+		yScale:document.getElementById('yScale'),
+		yTicks:document.getElementById('yTicks'),
+		start:document.getElementById('start'),
+		end:document.getElementById('end'),
+		sampleRange:document.getElementById('sampleRange')
+	}
+
+	getPoints();
 	update();
+}
+
+var mainOptions = {
+	func:f3,
+	sample:randomSampleIntegral,
+	start:0,
+	end:5,
+	sampleRange:700,
+	pointFunction:getAccuracyMap
+}
+
+var getPoints = function(){
+	var o = mainOptions;
+	points = o.pointFunction(o.func, o.sample, o.start, o.end, o.sampleRange);
 }
 
 var line = function(x1, y1, x2, y2){
@@ -25,7 +52,19 @@ var line = function(x1, y1, x2, y2){
 }
 
 var point = function(x, y){
-	context.fillRect(x, y, 1, 1);
+	context.fillRect(x-1, y-1, 2, 2);
+}
+var DOMElements = null;
+var updateFromDOM = function(){
+	document.getElementById("xOffsetDiv").innerHTML     = "&nbsp" +( drawOptions.xOffset     = parseInt(document.getElementById("xOffset").value    ));
+	document.getElementById("xScaleDiv").innerHTML      = "&nbsp" +( drawOptions.xScale      = parseInt(document.getElementById("xScale").value     ));
+	document.getElementById("xTicksDiv").innerHTML      = "&nbsp" +( drawOptions.xTicks      = parseInt(document.getElementById("xTicks").value     ));
+	document.getElementById("yOffsetDiv").innerHTML     = "&nbsp" +( drawOptions.yOffset     = parseInt(document.getElementById("yOffset").value    ));
+	document.getElementById("yScaleDiv").innerHTML      = "&nbsp" +( drawOptions.yScale      = parseInt(document.getElementById("yScale").value     ));
+	document.getElementById("yTicksDiv").innerHTML      = "&nbsp" +( drawOptions.yTicks      = parseInt(document.getElementById("yTicks").value     ));
+	document.getElementById("startDiv").innerHTML       = "&nbsp" +( mainOptions.start       = parseInt(document.getElementById("start").value      ));
+	document.getElementById("endDiv").innerHTML         = "&nbsp" +( mainOptions.end         = parseInt(document.getElementById("end").value        ));
+	document.getElementById("sampleRangeDiv").innerHTML = "&nbsp" +( mainOptions.sampleRange = parseInt(document.getElementById("sampleRange").value));
 }
 
 var drawOptions = {
